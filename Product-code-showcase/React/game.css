@@ -1,0 +1,31 @@
+.single-game-image {
+    height: 2.2rem ; 
+    width: 2.2rem ;
+    object-fit: contain;
+}
+
+.game-table-card {
+    height: 20rem; 
+    width: 100% ;
+    object-fit: contain;
+}
+
+.game-preview-image {
+    height: 10rem ; 
+    width: 10rem ;
+}
+
+.game-preview-image-vs {
+    height: 10rem ; 
+    width: 11rem ;
+}
+
+.game-team-preview-image {
+    height: 5rem ; 
+    width: 5rem ;
+    object-fit: contain;
+}
+
+.font-awesome-icon {
+    font-size: 40px;
+}
