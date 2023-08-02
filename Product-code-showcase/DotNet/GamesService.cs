@@ -1,31 +1,31 @@
-﻿using Sabio.Data;
-using Sabio.Data.Providers;
-using Sabio.Models.Domain.Locations;
-using Sabio.Models.Domain;
-using Sabio.Models.Requests.Games;
-using Sabio.Services.Interfaces;
+﻿using Data;
+using Data.Providers;
+using Models.Domain.Locations;
+using Models.Domain;
+using Models.Requests.Games;
+using Services.Interfaces;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Sabio.Models;
-using Sabio.Models.Domain.Conferences;
-using Sabio.Models.Domain.Teams;
-using Sabio.Models.Domain.Seasons;
-using Sabio.Models.Domain.TeamMembers;
-using System.Reflection;
-using Sabio.Models.Domain.Officials;
+using Models;
+using Models.Domain.Conferences;
+using Models.Domain.Teams;
+using Models.Domain.Seasons;
+using Models.Domain.TeamMembers;
+using Reflection;
+using Models.Domain.Officials;
 using CsvHelper.Configuration;
 using CsvHelper;
 using Microsoft.AspNetCore.Http;
-using Sabio.Models.Domain.Games;
+using Models.Domain.Games;
 using System.Globalization;
 using System.IO;
 using System;
 using System.Linq;
 using System.Net;
-using Sabio.Services.Locations;
+using Services.Locations;
 
-namespace Sabio.Services
+namespace Services
 {
     public class GamesService : IGamesService, IMapGame
     {
