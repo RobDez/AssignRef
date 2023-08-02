@@ -10,14 +10,14 @@ import {
   Table,
   Form,
   FormSelect,
-} from "react-bootstrap";
+} from "bootstrap";
 // import toastr from "toastr";
 import Pagination from "rc-pagination";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
 import "rc-pagination/assets/index.css";
 import "./game.css";
-import debug from "sabio-debug";
+import debug from "debug";
 import toastr from "toastr";
 // import sub components
 import SingleGame from "./SingleGame";
@@ -32,8 +32,8 @@ function GamesTable({ currentUser }) {
   const conferenceId = currentUser.conferenceId;
 
   const [pageData, setPageData] = useState({
-    currentSeason: "", //null
-    currentWeek: "",
+    currentSeason: null,
+    currentWeek: null,
     seasons: [],
     seasonComponents: [],
     seasonSelector: [],
@@ -73,7 +73,7 @@ function GamesTable({ currentUser }) {
   }, [pageData.currentSeason, pageData.currentPage]);
 
   useEffect(() => {
-    if (pageData.currentWeek && pageData.currentTeam === "") {
+    if (pageData.currentWeek && pageData.currentTeam === null) {
       gameService
         .GetBySeasonIdAndWeekPaginated(
           pageData.weeksCurrentPage - 1,
