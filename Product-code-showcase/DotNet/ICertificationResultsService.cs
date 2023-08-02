@@ -1,10 +1,10 @@
-﻿using Sabio.Models;
-using Sabio.Models.Domain.CertificationResults;
-using Sabio.Models.Domain.Certifications;
-using Sabio.Models.Requests.CertificationResults;
-using Sabio.Models.Requests.Certifications;
+﻿using Models;
+using Models.Domain.CertificationResults;
+using Models.Domain.Certifications;
+using Models.Requests.CertificationResults;
+using Models.Requests.Certifications;
 
-namespace Sabio.Services.Interfaces
+namespace Services.Interfaces
 {
     public interface ICertificationResultsService
     {
