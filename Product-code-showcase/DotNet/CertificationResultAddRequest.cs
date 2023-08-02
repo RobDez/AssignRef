@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Models.Requests.CertificationResults
+namespace Models.Requests.CertificationResults
 {
     public class CertificationResultAddRequest
     {
