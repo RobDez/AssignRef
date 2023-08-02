@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Sabio.Models;
-using Sabio.Models.Domain.CertificationResults;
+using Models;
+using Models.Domain.CertificationResults;
 
-using Sabio.Models.Domain.Venues;
-using Sabio.Models.Requests.CertificationResults;
-using Sabio.Models.Requests.Certifications;
-using Sabio.Services;
-using Sabio.Services.Interfaces;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
+using Models.Domain.Venues;
+using Models.Requests.CertificationResults;
+using Models.Requests.Certifications;
+using Services;
+using Services.Interfaces;
+using Web.Controllers;
+using Web.Models.Responses;
 using System;
 using System.Data.SqlClient;
 
-namespace Sabio.Web.Api.Controllers
+namespace Web.Api.Controllers
 {
     [Route("api/certification/results")]
     [ApiController]
