@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration.UserSecrets;
-using Sabio.Models;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.Games;
-using Sabio.Models.Requests.Games;
+using Models;
+using Models.Domain;
+using Models.Domain.Games;
+using Models.Requests.Games;
 using System.Collections.Generic;
 using System.Data;
 
-namespace Sabio.Services.Interfaces
+namespace Services.Interfaces
 {
     public interface IGamesService
     {
