@@ -1,24 +1,24 @@
-﻿using Sabio.Data.Providers;
-using Sabio.Services.Interfaces;
+﻿using Data.Providers;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 
-using System.Text;
+using Text;
 using System.Threading.Tasks;
-using Sabio.Models.Requests.CertificationResults;
-using Sabio.Models.Domain;
-using Sabio.Models.Domain.CertificationResults;
-using Sabio.Data;
-using Sabio.Models.Domain.Certifications;
-using Sabio.Models.Domain.Seasons;
-using Sabio.Models.Domain.Tests;
-using Sabio.Models;
-using Sabio.Models.Domain.Venues;
-using Sabio.Models.Requests.Certifications;
+using Models.Requests.CertificationResults;
+using Models.Domain;
+using Models.Domain.CertificationResults;
+using Data;
+using Models.Domain.Certifications;
+using Models.Domain.Seasons;
+using Models.Domain.Tests;
+using Models;
+using Models.Domain.Venues;
+using Models.Requests.Certifications;
 
-namespace Sabio.Services
+namespace Services
 {
     public class CertificationResultsService : ICertificationResultsService
     {
