@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Sabio.Services.Interfaces;
-using Sabio.Services;
-using Sabio.Web.Controllers;
-using Sabio.Web.Models.Responses;
+using Services.Interfaces;
+using Services;
+using Web.Controllers;
+using Web.Models.Responses;
 using System;
-using Sabio.Models.Domain;
+using Models.Domain;
 using System.Collections.Generic;
-using Sabio.Models.Requests.Games;
-using Sabio.Models;
-using Sabio.Web.Core.Services;
-using Sabio.Models.Domain.Games;
+using Models.Requests.Games;
+using Models;
+using Web.Core.Services;
+using Models.Domain.Games;
 using Microsoft.AspNetCore.Http;
 
-namespace Sabio.Web.Api.Controllers
+namespace Web.Api.Controllers
 {
     [Route("api/games")]
     [ApiController]
