@@ -1,11 +1,11 @@
-﻿using Sabio.Models.Domain.Conferences;
-using Sabio.Models.Domain.Officials;
-using Sabio.Models.Domain.Seasons;
-using Sabio.Models.Domain.Teams;
+﻿using Models.Domain.Conferences;
+using Models.Domain.Officials;
+using Models.Domain.Seasons;
+using Models.Domain.Teams;
 using System;
 using System.Collections.Generic;
 
-namespace Sabio.Models.Domain
+namespace Models.Domain
 {
     public class Game
     {
