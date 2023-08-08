@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Row, Table, Button } from "react-bootstrap";
 import { CardBody, Col } from "reactstrap";
 import certificationResultsService from "services/certificationResultsService";
-import debug from "sabio-debug";
+
 import toastr from "toastr";
 import TitleHeader from "components/general/TitleHeader";
 
@@ -12,7 +12,7 @@ import Pagination from "rc-pagination";
 import "rc-pagination/assets/index.css";
 import locale from "rc-pagination/lib/locale/en_US";
 
-const _logger = debug.extend("certification");
+
 
 function CertificationResults() {
   const [data, setData] = useState({
@@ -38,7 +38,7 @@ function CertificationResults() {
   }, [data.pageIndex, data.num]);
 
   const onGetAllCertResultError = (error) => {
-    _logger(error);
+    
     toastr.error("Failed to find Certification");
   };
   const onGetAllCertResultSuccess = (data) => {
@@ -125,7 +125,7 @@ function CertificationResults() {
       isActive: updateCertResult.isActive,
       userId: updateCertResult.user.id,
     };
-    _logger("Updating...", payload);
+  
     certificationResultsService
       .updateCertResult(payload)
       .then(onUpdateCertSuccess)
@@ -133,16 +133,16 @@ function CertificationResults() {
   };
 
   const onUpdateCertSuccess = (payload) => {
-    _logger(payload, "this is the paylaod<<<<<<<<<<<<<<<<<<<<<");
+   
     setData((prevState) => {
       let newData = { ...prevState };
       newData.num = newData.num + 1;
       let indexToUpdate = newData.certArray.findIndex(
         (load) => load.id === payload.id
       );
-      _logger("payload index ", indexToUpdate);
+     
       if (indexToUpdate >= 0) {
-        _logger(newData, "-=-=-=0-0-0-0-0=-");
+        
         newData.certArrayComponents = newData.certArray.map(mapCertification);
       }
 
@@ -155,7 +155,7 @@ function CertificationResults() {
 
   const onSearchCertResultError = (error) => {
     const errorMessage = "  No Records Found";
-    _logger("Failed to get certification results", error);
+    
 
     setData((prevState) => ({
       ...prevState,
@@ -176,7 +176,7 @@ function CertificationResults() {
     searchPage();
   };
   const handleEdit = (certification) => {
-    _logger("Editing certification", certification);
+   
   };
 
   return (
