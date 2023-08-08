@@ -9,11 +9,9 @@ import {
 import DefaultImage from "../../assets/images/avatar/anonymous_profile.png";
 import { SlOptionsVertical } from "react-icons/sl";
 import { FaUserEdit } from "react-icons/fa";
-import debug from "sabio-debug";
 import * as Icon from "react-bootstrap-icons";
 function MappingCertResults(props) {
   const aCertResult = props.certification;
-  const _logger = debug.extend("certification");
 
   const [compData, setCompData] = useState({
     currentCert: {},
@@ -39,7 +37,7 @@ function MappingCertResults(props) {
     const updatedData = event.target.value;
     const property = event.target.id;
 
-    _logger("handle cert change", updatedData, "property", property);
+
 
     let updateCertResult = { ...aCertResult, [property]: updatedData };
 
