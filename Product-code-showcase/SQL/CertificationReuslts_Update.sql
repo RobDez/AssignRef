@@ -1,53 +1,36 @@
-﻿USE [AssignRef]
-GO
-/****** Object:  StoredProcedure [dbo].[CertificationResults_Update]    Script Date: 7/12/2023 11:49:00 AM ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
--- =============================================
--- Author:Shane Roberto Fernandez
--- Create date: 05/09/2023
--- Description: CertificationResults for Update Proc
--- Code Reviewer: Luis Enrique Valle
 
--- MODIFIED BY: Roberto Fernandez
--- MODIFIED DATE: 06/26/2023
--- Code Reviewer:
--- Note: Added a operation to check if all required certs are completed and if they are then allcompleted is true
--- =============================================
 
 ALTER Proc [dbo].[CertificationResults_Update]
 
-		 @CertificationId		     int
+		 @CertificationId	     int
 		,@IsPhysicalCompleted	     bit
 		,@IsBackgroundCheckCompleted bit
-		,@IsTestCompleted			 bit				
-		,@TestInstanceId		     int = NULL
-		,@Score		                 decimal(5,2) = NULL
+		,@IsTestCompleted	     bit				
+		,@TestInstanceId             int = NULL
+		,@Score		             decimal(5,2) = NULL
 		,@IsFitnessTestCompleted     bit
-		,@IsClinicAttended		     bit
-		,@IsActive					 bit
-		,@UserId					 int
-		,@ModifiedBy				 int
+		,@IsClinicAttended	     bit
+		,@IsActive	       	     bit
+		,@UserId		     int
+		,@ModifiedBy		     int
 		,@Id                         int OUTPUT			
 		
 AS
 
 /* 
 
-Declare  @Id                         int          = 728
-		,@CertificationId		     int		  =	74  --FK
-		,@IsPhysicalCompleted	     bit          = 1
-		,@IsBackgroundCheckCompleted bit          = 1
-		,@IsTestCompleted			 bit		  =	1	
-		,@TestInstanceId		     int	      = 1
-		,@Score		                 decimal(5,2) = 6.6
-		,@IsFitnessTestCompleted     bit          = 1  
-		,@IsClinicAttended		     bit          = 1
-		,@IsActive					 bit          = 1
-		,@UserId                     int          = 6
-		,@ModifiedBy				 int          = 6  --FK
+		 Declare  @Id                int = 728
+		,@CertificationId 	     int = 74  --FK
+		,@IsPhysicalCompleted	     bit = 1
+		,@IsBackgroundCheckCompleted bit = 1
+		,@IsTestCompleted	     bit = 1	
+		,@TestInstanceId	     int = 1
+		,@Score		             decimal(5,2) = 6.6
+		,@IsFitnessTestCompleted     bit = 1  
+		,@IsClinicAttended	     bit = 1
+		,@IsActive	             bit = 1
+		,@UserId                     int = 6
+		,@ModifiedBy		     int = 6  --FK
 		
 
 EXECUTE	[dbo].[CertificationResults_Update]
@@ -107,15 +90,15 @@ Update [dbo].[CertificationResults]
 Set      [CertificationId]		      =@CertificationId	
 		,[IsPhysicalCompleted]	      =@IsPhysicalCompleted	
 		,[IsBackgroundCheckCompleted] =@IsBackgroundCheckCompleted
-		,[IsTestCompleted]			  =@IsTestCompleted		
-		,[TestInstanceId]		      =(CASE WHEN @TestInstanceId IS NOT NULL THEN @TestInstanceId ELSE [TestInstanceId] END)	
-		,[Score]		              = (CASE WHEN @Score IS NOT NULL THEN @Score ELSE [Score] END)
+		,[IsTestCompleted]	      =@IsTestCompleted		
+		,[TestInstanceId]	      =(CASE WHEN @TestInstanceId IS NOT NULL THEN @TestInstanceId ELSE [TestInstanceId] END)	
+		,[Score]		      =(CASE WHEN @Score IS NOT NULL THEN @Score ELSE [Score] END)
 		,[IsFitnessTestCompleted]     =@IsFitnessTestCompleted 
-		,[IsClinicAttended]		      =@IsClinicAttended	
-		,[IsActive]				      =@IsActive	
-		,[UserId]					  =@UserId	
-	    ,[ModifiedBy]                 =@ModifiedBy
+		,[IsClinicAttended]	      =@IsClinicAttended	
+		,[IsActive]		      =@IsActive	
+		,[UserId]		      =@UserId	
+	    ,[ModifiedBy]                     =@ModifiedBy
 		,[DateModified]               =@DateModified
-		,[IsCompleted]               = @IsAllCompleted
+		,[IsCompleted]                =@IsAllCompleted
 		Where Id = @Id
 End
