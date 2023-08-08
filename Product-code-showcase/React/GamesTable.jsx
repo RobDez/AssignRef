@@ -11,15 +11,12 @@ import {
   Form,
   FormSelect,
 } from "bootstrap";
-// import toastr from "toastr";
 import Pagination from "rc-pagination";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
 import "rc-pagination/assets/index.css";
 import "./game.css";
-import debug from "debug";
 import toastr from "toastr";
-// import sub components
 import SingleGame from "./SingleGame";
 import TitleHeader from "components/general/TitleHeader";
 import seasonService from "services/seasonService";
@@ -108,7 +105,6 @@ function GamesTable({ currentUser }) {
   ]);
 
   const onGetBySeasonWeekAndTeamSuccess = (response) => {
-    _logger("API:::", response);
     setPageData((prevState) => {
       let pageD = { ...prevState };
       pageD.games = response.item.pagedItems;
