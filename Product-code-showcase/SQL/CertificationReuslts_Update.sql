@@ -75,13 +75,13 @@ FROM [dbo].[Certifications]
 WHERE Id = @CertificationId
 
 DECLARE @IsAllCompleted BIT = CASE WHEN (@IsPhysicalRequired = 0 OR @IsPhysicalRequired = @IsPhysicalCompleted)
-									  AND (@IsBackgroundCheckRequired = 0 OR @IsBackgroundCheckRequired = @IsBackgroundCheckCompleted) 
-									  AND (@IsTestRequired = 0 OR @IsTestRequired = @IsTestRequired)
-									  AND (@IsFitnessTestRequired = 0 OR @IsFitnessTestRequired = @IsFitnessTestCompleted)
-									  AND (@IsClinicRequired = 0 OR @IsClinicRequired = @IsClinicAttended )
-									  THEN 1
-									  ELSE 0
-									  END
+				    AND (@IsBackgroundCheckRequired = 0 OR @IsBackgroundCheckRequired = @IsBackgroundCheckCompleted) 
+				    AND (@IsTestRequired = 0 OR @IsTestRequired = @IsTestRequired)
+				    AND (@IsFitnessTestRequired = 0 OR @IsFitnessTestRequired = @IsFitnessTestCompleted)
+			   	    AND (@IsClinicRequired = 0 OR @IsClinicRequired = @IsClinicAttended )
+				    THEN 1
+			   	    ELSE 0
+				    END
 									  
 SELECT @IsAllCompleted
 
